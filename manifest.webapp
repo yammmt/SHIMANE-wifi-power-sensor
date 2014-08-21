@@ -1,0 +1,14 @@
+{
+  "version"     : "0.1", 
+  "name"        : "SHIMANE",
+  "description" : "SHIMANE or Tokyo ?", 
+  "launch_path" : "/index.html", 
+  "developer"   : {
+    "name" : "yammmt", 
+    "url"  : ""
+  },
+  "installs_allowed_from" : ["*"],
+  "permissions" : {
+    "wifi-manage" : {}
+  }
+}
