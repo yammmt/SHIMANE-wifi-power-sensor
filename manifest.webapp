@@ -7,8 +7,13 @@
     "name" : "yammmt", 
     "url"  : ""
   },
+  "icons" : {
+    "60" : "/img/icon-60.png",
+    "128" : "/img/icon-128.png"
+  },
   "installs_allowed_from" : ["*"],
   "permissions" : {
     "wifi-manage" : {}
-  }
+  }, 
+  "type": "certified"
 }
