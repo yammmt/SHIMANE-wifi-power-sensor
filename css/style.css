@@ -1,4 +1,14 @@
+html {
+    display         : table;
+    /*margin          : 0 auto;*/
+    /*padding         : 0;*/
+    height          : 100%;
+    width           : 100%;
+}
+
 body {
+    display         : table-cell;
+    vertical-align  : middle;
     margin          : 0px auto;
     padding         : 0px;
     background-color: #00000D;
@@ -7,5 +17,12 @@ body {
 }
 
 h1 {
-    text-shadow     : 3px 2px 2px #FFFFFF;
+    text-shadow     : 3px 2px 2px #F7FFFF;
+}
+
+#print_zone {
+    display         : table;
+    vertical-align  : middle;
+    margin          : 0 auto;
+    padding         : 0;
 }
