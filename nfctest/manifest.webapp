@@ -1,0 +1,26 @@
+{
+  "version"     : "0.1", 
+  "name"        : "SHIMANE",
+  "description" : "SHIMANE or Tokyo ?", 
+  "launch_path" : "/index.html", 
+  "developer"   : {
+    "name" : "yammmt", 
+    "url"  : ""
+  },
+  "icons" : {
+    "60" : "/img/icon-60.png",
+    "128" : "/img/icon-128.png"
+  },
+  "installs_allowed_from" : ["*"],
+  "permissions" : {
+    "wifi-manage" : {},
+    "nfc": { "access": "readwrite" }
+  }, 
+  "nfc-ndef-discovered": {
+    "filters": {
+      "type": "url",
+      "url": { "required":true, "regexp":"/^https?:.{1,16384}$/i" }
+    }
+  },
+  "type": "certified"
+}

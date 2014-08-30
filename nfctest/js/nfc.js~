@@ -1,0 +1,15 @@
+ navigator.mozSetMessageHandler('activity', NfcActivityHandler);
+ 
+function NfcActivityHandler(activity) {
+  var activityName = activity.source.name;
+  var data = activity.source.data;
+ 
+  switch (activityName) {
+    case 'nfc-ndef-discovered':
+      console.log('nfc ndef message records(s): ' + JSON.stringify(data.records));
+      console.log('Session Token: ' + JSON.stringify(data.sessionToken));
+      console.log('Technology Detected: ' + JSON.stringify(data.tech));
+      handleNdefDiscovered(data);
+      break;
+  }
+}
