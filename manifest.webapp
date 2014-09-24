@@ -14,6 +14,5 @@
   "installs_allowed_from" : ["*"],
   "permissions" : {
     "wifi-manage" : {}
-  }, 
-  "type": "certified"
+  }
 }
