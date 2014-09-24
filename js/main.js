@@ -10,7 +10,32 @@ Img[3].src = "img/tokushima.png";
 
 var NowShimane = 1;
 
+apealShimane = function() {
+    console.log("apeal");
+    if(nowShimane) {
+        alert("YES!");
+    }
+    else {
+        alert("no...");
+    }
+}
+
+changeShimane = function() {
+    console.log("changeShimane");
+    var nextImg = Math.round(Math.random()*3);
+    if(nextImg == 0) {
+        nowShimane = 1;
+    }
+    else {
+        nowShimane = 0;
+    }
+    document.getElementById("pref").src = Img[nextImg].src;
+}
+
 getWifiPower = function() {
+    console.log("getWifiPower");
+
+/*
     // 4debug
     var netNum = Math.round(Math.random()*15);
     var aveNum = Math.round(Math.random()*100)+1;
@@ -20,12 +45,9 @@ getWifiPower = function() {
     document.getElementById("ave").innerHTML = "平均強度 : " + aveNum;
     document.getElementById("pow").innerHTML = "総合電波力 : " + netPow;
 
-    //document.getElementById("pref").src = img[Math.round(Math.random()*3)].src;
-    //document.getElementById("pref").width = Math.round(Math.random()*255);
-    //document.getElementById("pref").height = Math.round(Math.random()*255);
     changeShimane();
+*/
 
-/*
     var wifi = navigator.mozWifiManager;
     var request = wifi.getNetworks();
 
@@ -55,26 +77,13 @@ getWifiPower = function() {
 	    var infoElm = document.getElementById("info");
 	    infoElm.innerHTML += 'エラーが発生しました。再読み込みしてください。';
     };
-*/
+
 }
 
-apealShimane = function() {
-    if(nowShimane) {
-        alert("YES!");
-    }
-    else {
-        alert("no...");
-    }
-}
+testFunc = function() {
+    getWifiPower();
+    setTimeout("testFunc()", 5000);
+};
 
-changeShimane = function() {
-    var nextImg = Math.round(Math.random()*3);
-    if(nextImg == 0) {
-        nowShimane = 1;
-    }
-    else {
-        nowShimane = 0;
-    }
-    document.getElementById("pref").src = Img[nextImg].src;
-}
+document.addEventListener("DOMContentLoaded", testFunc);
 
