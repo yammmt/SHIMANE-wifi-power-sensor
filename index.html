@@ -1,14 +1,16 @@
 <!DOCTYPE html>
+<html>
     <head>
         <meta charset=UTF-8>
-        <meta name="viewport" content="width=device-width">
         <title>SHIMANE-wifi-power-sensor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="js/main.js"></script>
+        <script src="js/main.js"></script>
     </head>
     <body>
         <div id="print_zone">
-            <h1>SHIMANE !</h1>
+            <h1>SHIMANE!</h1>
             <div id="info"></div>
             <br>
             <div id="num"></div>
@@ -16,12 +18,11 @@
             <div id="ave"></div>
             <br>
             <div id="pow"></div>
-            <br><br><br>
-            <img id="pref" src="img/shimane.png" width="128" height="128" onclick="apealShimane()">
-            <br>
-            <!--
-              <input type="button" id="shimaneButton" value="SHIMANE!" onclick="getWifiPower()">
-            -->
+            <br><br>
         </div>
+        <button type="button" onclick="getWifiPower()">
+            <img src="img/shimane.png" id="shimaneButton" width="128" height="128">
+        </button>
+        <br>
     </body>
 </html>
