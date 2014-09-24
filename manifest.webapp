@@ -1,17 +1,16 @@
 {
-  "version"     : "0.1", 
-  "name"        : "SHIMANE",
-  "description" : "SHIMANE or Tokyo ?", 
+  "version"     : "0.5", 
+  "name"        : "Shimane-visualizer",
+  "description" : "NO Wi-Fi", 
   "launch_path" : "/index.html", 
   "developer"   : {
     "name" : "yammmt", 
-    "url"  : ""
+    "url"  : "https://github.com/yammmt/SHIMANE-wifi-power-sensor"
   },
   "icons" : {
     "60" : "/img/icon-60.png",
     "128" : "/img/icon-128.png"
   },
   "installs_allowed_from" : ["*"],
-  "permissions" : {
-  }
+  "permissions" : {}
 }
