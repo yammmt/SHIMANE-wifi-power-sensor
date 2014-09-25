@@ -1,11 +1,11 @@
 {
-  "version"     : "0.1", 
-  "name"        : "SHIMANE",
+  "version"     : "0.2", 
+  "name"        : "Wi-Fi * density",
   "description" : "SHIMANE or Tokyo ?", 
   "launch_path" : "/index.html", 
   "developer"   : {
     "name" : "yammmt", 
-    "url"  : ""
+    "url"  : "https://github.com/yammmt/SHIMANE-wifi-power-sensor"
   },
   "icons" : {
     "60" : "/img/icon-60.png",

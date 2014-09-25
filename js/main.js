@@ -8,43 +8,58 @@ img[2].src = "img/shimane.png";
 img[3] = new Image();
 img[3].src = "img/tokushima.png";
 
+myShimane = function(wifiNum) {
+    if(wifiNum > 10) {
+	return 'Tokyo';
+    }
+    else if(wifiNum > 6) {
+	return 'Osaka';
+    }
+    else if(wifiNum > 3) {
+	return 'Hiroshima';
+    }
+    else if(wifiNum > 0) {
+	return 'SHIMANE';
+    }
+};
+
 document.addEventListener("DOMContentLoaded", function() {
     var wifi = navigator.mozWifiManager;
     var request = wifi.getNetworks();
 
     request.onsuccess = function () {
-	    var networks = this.result;
-	    var numElm = document.getElementById("num");
-	    var aveElm = document.getElementById("ave");
-	    var powElm = document.getElementById("pow");
-	    //var comElm = document.getElementById("comment");
+	var networks = this.result;
+	var numElm = document.getElementById("num");
+	var aveElm = document.getElementById("ave");
+	var powElm = document.getElementById("pow");
+	var comElm = document.getElementById("com");
 
-	    var netNum = 0;
-	    var netPow = 0;
+	var netNum = 0;
+	var netPow = 0;
 
         networks.forEach(function (network) {
-	        netNum++;
-	        netPow += network.relSignalStrength;
+	    netNum++;
+	    netPow += network.relSignalStrength;
         });
-	    aveNum = Math.round(netPow/netNum);
+        aveNum = Math.round(netPow/netNum);
 
-	    numElm.innerHTML = "検出数 : " + netNum;
+        numElm.innerHTML = "検出数 : " + netNum;
         aveElm.innerHTML = "平均強度 : " + aveNum;
-	    powElm.innerHTML = "総電波力 : " + netPow;
-        //comElm.innerHTML = "私の電波力は 5300000 です";
+        powElm.innerHTML = "総電波力 : " + netPow;
+	var wifiPref = myShimane(netNum);
+	comElm.innerHTML = wifiPref;
 
-        changeShimane(2*netPow);
+        changeShimane();
     }
 
-    changeShimane = function(netPow) {
+    changeShimane = function() {
     	document.getElementById("pref").src = img[Math.round(Math.random()*3)].src;
     	document.getElementById("pref").width = Math.round(Math.random()*255);
     	document.getElementById("pref").height = Math.round(Math.random()*255);
-        setTimeout(changeShimane, 2*netPow);
     }
 
     request.onerror = function (err) {
 	    var infoElm = document.getElementById("info");
-	    infoElm.innerHTML += 'エラーが発生しました。再読み込みしてください。';
+	    infoElm.innerHTML += 'Err occured. Try again.';
     };
 });
