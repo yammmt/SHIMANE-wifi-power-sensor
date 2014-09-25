@@ -2,10 +2,15 @@ body {
     margin          : 0px auto;
     padding         : 0px;
     background-color: #00000D;
-    color           : #FFFFFF;
+    color           : white;
     text-align      : center;
 }
 
 h1 {
     text-shadow     : 3px 2px 2px #FFFFFF;
+}
+
+#com {
+    font-size       : x-large;
+    text-shadow     : 2px 1px 1px #FF0000;
 }

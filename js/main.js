@@ -25,6 +25,7 @@ myShimane = function(wifiNum) {
 
 document.addEventListener("DOMContentLoaded", function() {
     var wifi = navigator.mozWifiManager;
+    var infoElm = document.getElementById("info");
     var request = wifi.getNetworks();
 
     request.onsuccess = function () {
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	var numElm = document.getElementById("num");
 	var aveElm = document.getElementById("ave");
 	var powElm = document.getElementById("pow");
+        var denElm = document.getElementById("den");
 	var comElm = document.getElementById("com");
 
 	var netNum = 0;
@@ -42,12 +44,16 @@ document.addEventListener("DOMContentLoaded", function() {
 	    netPow += network.relSignalStrength;
         });
         aveNum = Math.round(netPow/netNum);
+        var baseDens = 1200*Math.pow((Math.pow(10, -3)), 2);
+        var guessedDensity = netNum/baseDens;
+        var wifiPref = myShimane(netNum);
 
+        infoElm.innerHTML = "";
         numElm.innerHTML = "検出数 : " + netNum;
         aveElm.innerHTML = "平均強度 : " + aveNum;
         powElm.innerHTML = "総電波力 : " + netPow;
-	var wifiPref = myShimane(netNum);
-	comElm.innerHTML = wifiPref;
+        denElm.innerHTML = "推定人口密度 : " + guessedDensity.toFixed(2);
+        comElm.innerHTML = "Wi-Fi力 : " + wifiPref;
 
         changeShimane();
     }
@@ -59,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     request.onerror = function (err) {
-	    var infoElm = document.getElementById("info");
 	    infoElm.innerHTML += 'Err occured. Try again.';
     };
 });
