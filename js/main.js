@@ -67,3 +67,7 @@ getWifiPower = function() {
 */
 };
 
+go2Shimane = function() {
+    alert('hi');
+    document.location="./shimane.html";
+};
