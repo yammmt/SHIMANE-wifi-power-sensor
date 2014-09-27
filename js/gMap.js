@@ -19,15 +19,13 @@ error = function(err) {
 generateMap = function(lat, lng) {
     var latlng = new google.maps.LatLng(lat, lng);
     var mapOptions = {
-        zoom: 17,
-        center: latlng, 
-        scaleControl: false,
-        mapTypeControl : false,
-        disableDoubleClickZoom: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        position: latlng,
+        pov: {
+            heading: 30, 
+            pitch: 5
+        }
     };
-    var myMap = new google.maps.Map(document.getElementById('print_zone'), mapOptions);
-    console.log(myMap);
+    var myMap = new google.maps.StreetViewPanorama(document.getElementById('print_zone'), mapOptions);
 };
 
 back2Shimane = function() {
