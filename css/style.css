@@ -1,14 +1,7 @@
 html {
-    display         : table;
-    /*margin          : 0 auto;*/
-    /*padding         : 0;*/
-    height          : 100%;
-    width           : 100%;
 }
 
 body {
-    display         : table-cell;
-    vertical-align  : middle;
     margin          : 0px auto;
     padding         : 0px;
     background-color: #00000D;
@@ -20,9 +13,38 @@ h1 {
     text-shadow     : 3px 2px 2px #F7FFFF;
 }
 
-#print_zone {
-    display         : table;
-    vertical-align  : middle;
+div {
+    text-align      : center;
+}
+
+#gmap {
     margin          : 0 auto;
     padding         : 0;
+    position        : absolute;
+    width           : 70%;
+    height          : 60%;
+    top             : 15%;
+    left            : 15%;
+    z-index         : 0;
+}
+
+#myCanvas {
+    margin          : 0 auto;
+    padding         : 0;
+    position        : absolute;
+    width           : 70%;
+    height          : 60%;
+    top             : 15%;
+    left            : 15%;
+    z-index         : 1;
+}
+
+#backButton {
+   margin           : 0 auto;
+   position         : absolute;
+   bottom           : 10%;
+
+   -webkit-transform: translate(-50%,-50%);
+   -moz-transform   : translate(-50%,-50%);
+   transform        : translate(-50%,-50%);
 }

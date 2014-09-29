@@ -10,16 +10,19 @@
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXNgTxezJ7K_3ymEEyWrKHAlqEiKIHV1s&sensor=true">
         </script>
         <script src="js/gMap.js"></script>
+        <script src="js/drawCanvas.js"></script>
     </head>
     <body onload="doAction()">
-        <h1>SHIMANE?</h1>
-        <div id="print_zone" style="width: 70%; height: 50%">
-            now loading...
-        </div>
+        <h1>SHIMANE-visualizer</h1>
+        <br>
+        <div id="gmap"></div>
+        <canvas id="myCanvas"></canvas>
         <br><br>
-        <button type="button" onclick="back2Shimane()">
-            Return to your World!
-        </button>
+        <div>
+            <button type="button" id="backButton" onclick="back2Shimane()">
+                Return to your World!
+            </button>
+        </div>
         <br>
     </body>
 </html>
