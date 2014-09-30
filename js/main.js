@@ -18,13 +18,17 @@ getWifiPower = function() {
     console.log("getWifiPower");
 
     // 4debug
-    var netNum = Math.round(Math.random()*15);
+    var netNum = Math.round(Math.random()*10);
     var aveNum = Math.round(Math.random()*100)+1;
     var netPow = netNum*aveNum;
 
     document.getElementById("num").innerHTML = "検出数 : " + netNum;
     document.getElementById("ave").innerHTML = "平均強度 : " + aveNum;
     document.getElementById("pow").innerHTML = "総合電波力 : " + netPow;
+
+    // cookie の有効期限は半日
+    document.cookie = 'wifiNum=' + encodeURIComponent(netNum) + '; max-age=43200;';
+
     changeShimane();
 
 // 以下, manifest.webapp に type:"certified" を追加しなければ動かず
@@ -68,6 +72,5 @@ getWifiPower = function() {
 };
 
 go2Shimane = function() {
-    alert('hi');
-    document.location="./shimane.html";
+    document.location = "./shimane.html";
 };
