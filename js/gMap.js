@@ -3,7 +3,7 @@ var LATLNG;
 doAction = function() {
     var opt = {
         enableHighAccuracy: true,
-        timeout: 10000
+        timeout: 20000
     };
     navigator.geolocation.getCurrentPosition(initPosition, error, opt)
 };

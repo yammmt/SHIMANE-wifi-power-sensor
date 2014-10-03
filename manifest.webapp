@@ -14,5 +14,8 @@
   "installs_allowed_from" : ["*"],
   "permissions" : {
      "geolocation" : {}
-  }
+  },
+  "orientation" : [
+     "portrait"
+  ]
 }
